@@ -1,0 +1,58 @@
+import { bindActionCreators } from '@reduxjs/toolkit';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom'
+import { actionCreaters } from '../../Redux';
+
+export default function DashboardHeader() {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const userActions = bindActionCreators(actionCreaters, dispatch);
+
+    const state = useSelector((state) => state.stateVals);
+    const { name, uType, accessToken } = state;
+
+    const logOut = async (event) => {
+        event.preventDefault();
+        localStorage.clear();
+        userActions.logOut(null);
+        navigate("/admin-login");
+    };
+
+    return (
+        <header className="header-area header-sticky">
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <nav className="main-nav">
+                            <Link to="/dashboard" className="logo">
+                                <img src="assets/images/logo.png" alt="" />
+                            </Link>
+                            <ul className="nav">
+                                <li><Link to="/dashboard" className="active">Dashboard</Link></li>
+                                <li><Link to="/register-user">Register User</Link></li>
+                                <li><Link to="/contact-user">Contact Users</Link></li>
+                                {accessToken && uType === 'admin' && (
+                                    <li><Link to="#" onClick={(e) => {
+                                        logOut(e);
+                                    }}>Logout</Link></li>
+                                )}
+                                {
+                                    (!accessToken || (accessToken && uType === 'user')) && (
+                                        <>
+                                            <li><Link to="/admin-login">Login</Link></li>
+                                        </>
+                                    )
+                                }
+                            </ul>
+                            <a className='menu-trigger'>
+                                <span>Menu</span>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+    )
+}

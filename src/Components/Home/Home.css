@@ -1,0 +1,168 @@
+.main-banner h6 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  /* text-align: left; */
+  background: rgb(255 255 255 / 33%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  width: 180px;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  padding-bottom: 2px;
+}
+
+.cropped-circle {
+    width: 400px;  /* Set the desired width */
+    height: 400px; /* Set the desired height (equal to width for circle) */
+    border-radius: 50%; /* Make it a circle */
+    overflow: hidden; /* Hide any overflow */
+    object-fit: cover; /* Cover the entire container */
+  }
+  .categories .item .icon img {
+    max-width: 40px;
+}
+.typing  {
+    color: #0583eb;
+}
+.cursor {
+    color: #0583eb;
+}
+h2.recent1 {
+  text-align: center;
+}
+
+h2.recent {
+  text-align: left;
+}
+p.recent {
+  text-align: left;
+}
+.image-container {
+    position: relative;
+  }
+  
+  /* .cropped-circle {
+    display: block;
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+  } */
+  
+
+  .icons-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none; /* Ensure the icons do not interfere with image click events */
+  }
+  
+  .icons {
+    position: absolute;
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    opacity: 0;
+    animation: moveIcon 10s infinite;
+  }
+  
+  .react-icon {
+    animation-delay: 0s;
+  }
+  
+  .java-icon {
+    animation-delay: 2s;
+  }
+  
+  .bootstrap-icon {
+    animation-delay: 4s;
+  }
+  
+  .html-icon {
+    animation-delay: 6s;
+  }
+  
+  .css-icon {
+    animation-delay: 8s;
+  }
+  
+  .git-icon {
+    animation-delay: 10s;
+  }
+  
+  @keyframes moveIcon {
+    0% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+    25% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  .item1 .icons {
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    text-align: center;
+    line-height: 62px;
+    /* background-color: #fff; */
+    /* border-radius: 50%; */
+}
+
+
+
+/* styles.css */
+.row.bid-info {
+  display: flex;
+  /* justify-content: space-between; */
+  padding: 10px;
+}
+span.bid {
+    color: #fff !important;
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transition: transform 0.2s;
+    flex: 1 1;
+    margin: 0 10px;
+    max-width: 170px;
+    min-width: 170px;
+}
+
+.info-box:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.info-box span {
+  display: block; /* Ensure the span elements are block-level for proper spacing */
+  margin-bottom: 5px; /* Some margin between the spans */
+  font-size: 14px; /* Adjust font size */
+  color: #333; /* Darker color for text */
+}
+
+.info-box strong {
+  font-size: 18px; /* Slightly larger font for strong elements */
+  color: #000; /* Dark color for emphasis */
+}
